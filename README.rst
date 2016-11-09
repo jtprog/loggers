@@ -1,3 +1,17 @@
+.. image:: https://readthedocs.org/projects/loggers/badge/?version=master
+   :target: http://loggers.readthedocs.io/en/latest/?badge=master
+   :alt: Documentation Status
+
+.. image:: https://coveralls.io/repos/github/jonDel/loggers/badge.svg?branch=master
+   :target: https://coveralls.io/github/jonDel/loggers?branch=master
+
+.. image:: https://landscape.io/github/jonDel/loggers/master/landscape.svg?style=flat
+    :target: https://landscape.io/github/jonDel/loggers/master
+    :alt: Code Health
+
+.. image:: https://www.versioneye.com/user/projects/58233ff57a7295003aab5425/badge.svg?style=flat
+    :target: https://www.versioneye.com/user/projects/58233ff57a7295003aab5425
+
 loggers
 ===========
 
@@ -42,6 +56,11 @@ To install loggers, simply run:
   $ pip install loggers
 
 loggers is compatible with Python 2.6+
+
+Documentation
+-------------
+
+https://loggers.readthedocs.io
 
 Source Code
 -----------

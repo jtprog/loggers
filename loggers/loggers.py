@@ -1,15 +1,17 @@
 #!/usr/bin/python
-import logging,logging.handlers, os,sys
+import logging
+import logging.handlers
+import sys
+import os
 
 class Loggers(object):
-	'''
-		Description: provide log functionalities either in stream or file form
+	'''Provides log functionalities either in stream or file form
+
 		Arguments:
-			Mandatory:
-				logName: name of the log handler
-			Optional:
-				logFolderPath: folder where the log's files will lie (default=None)
-				logFile: name of the debug and error log's files (default=None)
+			logName (:obj:`str`): name of the log handler
+			logFolderPath (:obj:`str`,optional, *default* =None): folder where the log's files will lie
+			logFile (:obj:`str`,optional, *default* =None): path of the debug and error log's files
+
 	'''
 	def __init__(self, logName, **kwargs):
 		defaultArgs= {'logFolderPath':None,'logFile':None}
@@ -43,10 +45,11 @@ class Loggers(object):
 					print 'It was not possible to write to the log folder '+defaultArgs['logFolderPath']+'. You must create it manually and set the required permissions.'
 
 	def setLogRotateHandler(self,setFile):
-		'''
-		Description: enables/disables logs to be written to files
+		'''Enables/disables logs to be written to files
+
 		Arguments:
-			setFile: False disables, True enables
+			setFile (:obj:`bool`): False disables, True enables
+
 		'''
 		if hasattr(self, 'debug_handler'):
 			if setFile:
@@ -62,20 +65,23 @@ class Loggers(object):
 			self.log.debug('The file log handlers were not created. It is not possible to write to the log files.')
 
 	def setLogLevel(self,logLevel):
-		'''
-		Description: configures class log level
+		'''Configures class log level
+
 		Arguments:
-			logLevel: log level ('NOTSET','DEBUG','INFO' 'WARNING', 'ERROR', 'CRITICAL')
+			logLevel (:obj:`str`): log level ('NOTSET','DEBUG','INFO' 'WARNING', 'ERROR', 'CRITICAL')
+
 		'''
 		exec "self.log.setLevel(logging."+logLevel+")"
 		exec "self.log."+logLevel.lower()+"('Changing log level to "+logLevel+"')"
 
 	def setLogFormat(self, logType, logFormat):
-		'''
-		Description: configures log format
+		'''Configures log format
+
 		Arguments:
-			logType: log type (error, debug or stream)
-			logFormat: log format (ex:"Log: %(message)s | Log level:%(levelname)s | Date:%(asctime)s',datefmt='%m/%d/%Y %I:%M:%S")
+			logType (:obj:`str`): log type (error, debug or stream)
+			logFormat (:obj:`str`): log format (ex:"Log: %(message)s | Log level:%(levelname)s |
+				Date:%(asctime)s',datefmt='%m/%d/%Y %I:%M:%S")
+
 		'''
 		if not (logType == 'error' or logType == 'stream' or logType == 'debug'):
 			self.log.debug('Log type must be error, stream, or debug')
