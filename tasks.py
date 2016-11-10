@@ -12,6 +12,6 @@ def test(ctx, coverage=False, flags=""):
 
 @task
 def coverage(ctx):
-ctx.run("coverage run --source=loggers tests/test_loggers.py --verbose")
+  ctx.run("coverage run --source=loggers tests/test_loggers.py --verbose")
 
 ns = Collection(test, coverage)
