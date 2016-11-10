@@ -17,8 +17,7 @@ setup(
     ],
     description='Usefull wrapper methods for logging native package',
     long_description=open('README.rst').read(),
-    install_requires=[
-    ],
+    install_requires=[],
     include_package_data=True,
     zip_safe=False,
 )

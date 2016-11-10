@@ -1,9 +1,13 @@
-.. image:: https://readthedocs.org/projects/loggers/badge/?version=master
-   :target: http://loggers.readthedocs.io/en/latest/?badge=master
-   :alt: Documentation Status
+.. image:: https://travis-ci.org/jonDel/loggers.svg?branch=master
+   :target: https://travis-ci.org/jonDel/loggers
+   :alt: Travis CI build status (Linux)
 
 .. image:: https://coveralls.io/repos/github/jonDel/loggers/badge.svg?branch=master
    :target: https://coveralls.io/github/jonDel/loggers?branch=master
+
+.. image:: https://readthedocs.org/projects/loggers/badge/?version=master
+   :target: http://loggers.readthedocs.io/en/latest/?badge=master
+   :alt: Documentation Status
 
 .. image:: https://landscape.io/github/jonDel/loggers/master/landscape.svg?style=flat
     :target: https://landscape.io/github/jonDel/loggers/master
