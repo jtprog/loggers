@@ -7,7 +7,6 @@ install:
   - pip install coveralls # For coveralls.io specifically
   - pip install -r tests_requirements.txt
 script:
-  # Main tests, w/ coverage!
-  - inv test --coverage
+  - python tests/test_loggers.py 
 after_success:
 - coveralls
