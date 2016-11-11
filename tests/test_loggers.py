@@ -15,15 +15,15 @@ class LoggersTest(unittest.TestCase):
     def setUpClass(cls):
         cls.logpath = '/tmp/logTest'
         os.mkdir(cls.logpath)
-        cls.logTest = Loggers('logTest', logFolderPath=cls.logpath)
-        cls.logTest.setLogRotateHandler(True)
+        cls.logTest = Loggers('logTest', log_folder_path=cls.logpath)
+        cls.logTest.set_log_rotate_handler(True)
 
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.logpath)
 
     def perform_regex_test(self, log_level, log_function, log_message, log_level_dst):
-        self.logTest.setLogLevel(log_level)
+        self.logTest.set_log_level(log_level)
         log_function(log_message)
         datalog = decomp_bz2(self.logpath+'/logTest.'+log_level_dst+'.log.bz2')
         match = re.match('Log: '+log_message+' | Log level:'+log_level+
