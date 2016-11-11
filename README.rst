@@ -10,11 +10,15 @@
    :alt: Documentation Status
 
 .. image:: https://landscape.io/github/jonDel/loggers/master/landscape.svg?style=flat
-    :target: https://landscape.io/github/jonDel/loggers/master
-    :alt: Code Health
+   :target: https://landscape.io/github/jonDel/loggers/master
+   :alt: Code Health
 
 .. image:: https://www.versioneye.com/user/projects/58233ff57a7295003aab5425/badge.svg?style=flat
-    :target: https://www.versioneye.com/user/projects/58233ff57a7295003aab5425
+   :target: https://www.versioneye.com/user/projects/58233ff57a7295003aab5425
+
+.. image:: https://img.shields.io/pypi/v/loggers.svg
+   :target: https://pypi.python.org/pypi/loggers/
+   :alt: Latest PyPI version
 
 loggers
 ===========
