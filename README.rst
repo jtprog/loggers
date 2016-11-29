@@ -32,26 +32,26 @@ Example
 .. code:: python
 
   >>> from loggers import Loggers
-  >>> 
+  >>>
   >>> class spamClass(Loggers):
-  ...   def __init__(self,logFolder = None):
-  ...       super(spamClass, self).__init__('spamClass',logFolderPath=logFolder)
-  ...   def doStuff(self,arg):
+  ...   def __init__(self, logFolder=None):
+  ...       super(spamClass, self).__init__('spamClass', logFolderPath=logFolder)
+  ...   def do_stuff(self, arg):
   ...       if not type(arg) == str:
   ...         self.log.error("I was expecting a string. :( ")
   ...       else:
   ...         self.log.debug("I received my string. :)")
-  ... 
+  ...
   >>> spam = spamClass('/tmp/logs/spamClass')
   >>> spam.log.error('ERROR')
   Log: ERROR | Log level:ERROR | Date:31/10/2016 16:51:47
-  >>> spam.setLogRotateHandler(True)
-  >>> spam.doStuff(123)
+  >>> spam.set_log_rotate_handler(True)
+  >>> spam.do_stuff(123)
   Log: I was expecting a string. :(  | Log level:ERROR | Date:31/10/2016 16:51:47
-  >>> spam.doStuff('Eggs')
-  >>> spam.setLogLevel('DEBUG')
+  >>> spam.do_stuff('Eggs')
+  >>> spam.set_log_level('DEBUG')
   Log: Changing log level to DEBUG | Log level:DEBUG | Date:31/10/2016 16:51:47
-  >>> spam.doStuff('Spam')
+  >>> spam.do_stuff('Spam')
   Log: I received my string. :) | Log level:DEBUG | Date:31/10/2016 16:51:47
 
 Installation
