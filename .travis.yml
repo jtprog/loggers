@@ -1,11 +1,11 @@
 language: python
 
 python:
-  - "2.7"
+  - "3.6"
 install:
-  - pip install -e .
-  - pip install coveralls # For coveralls.io specifically
-  - pip install -r tests_requirements.txt
+  - pip3 install -e .
+  - pip3 install coveralls # For coveralls.io specifically
+  - pip3 install -r tests_requirements.txt
 script:
   # Main tests, w/ coverage!
   - inv test --coverage

@@ -3,12 +3,14 @@ import shutil
 import re
 import os
 import bz2file
-from loggers import Loggers
+from loggers.loggers import Loggers
+
 
 def decomp_bz2(log_file):
     with bz2file.open(log_file) as mfile:
         datalog = mfile.read()
     return datalog
+
 
 class LoggersTest(unittest.TestCase):
     @classmethod
@@ -25,8 +27,8 @@ class LoggersTest(unittest.TestCase):
     def perform_regex_test(self, log_level, log_function, log_message, log_level_dst):
         self.logTest.set_log_level(log_level)
         log_function(log_message)
-        datalog = decomp_bz2(self.logpath+'/logTest.'+log_level_dst+'.log.bz2')
-        match = re.match('Log: '+log_message+' | Log level:'+log_level+
+        datalog = decomp_bz2(self.logpath + '/logTest.' + log_level_dst + '.log.bz2')
+        match = re.match('Log: ' + log_message + ' | Log level:' + log_level +
                          r' | Date:\d{2}\/\d{2}\/\d{4} d{2}:\d{2}:\d{2}',
                          datalog.splitlines()[-1])
         return match
@@ -67,6 +69,7 @@ class LoggersTest(unittest.TestCase):
         log_message = 'Critical log in CRITICAL log level Test.'
         self.assertIsNotNone(self.perform_regex_test('CRITICAL', self.logTest.log.critical,
                                                      log_message, 'error'))
+
 
 if __name__ == "__main__":
     unittest.main()
