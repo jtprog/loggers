@@ -39,9 +39,9 @@ class Loggers(object):
                 try:
                     os.mkdir(default_args['log_folder_path'])
                 except Exception as error:
-                    print 'It was not possible to write to the log folder '+\
-                          default_args['log_folder_path']+'. You must create it\
-                          manually and set the required permissions. Error: '+str(error)
+                    print ('It was not possible to write to the log folder ' +
+                           default_args['log_folder_path']+'. You must create it\
+                           manually and set the required permissions. Error: '+str(error))
             else:
                 try:
                     self.debug_handler = logging.handlers.RotatingFileHandler(self.debug_logfile,
@@ -57,9 +57,9 @@ class Loggers(object):
                     self.error_handler.setLevel(logging.ERROR)
                     self.error_handler.setFormatter(self.default_formatter)
                 except Exception as error:
-                    print 'It was not possible to write to the log folder '+\
-                          default_args['log_folder_path']+'. You must create it\
-                          manually and set the required permissions. Error: '+str(error)
+                    print ('It was not possible to write to the log folder ' +
+                           default_args['log_folder_path']+'. You must create it\
+                           manually and set the required permissions. Error: '+str(error))
 
     def set_log_rotate_handler(self, set_file):
         '''Enables/disables logs to be written to files
